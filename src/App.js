@@ -1,8 +1,16 @@
 import './App.css';
+import Home from "./compoents/Home";
+import Nav from "./compoents/Nav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">JJ-NC-Games-App</div>
+    <BrowserRouter>
+    <div className="App">JJ Game Reviews
+    <Nav />
+    <Home />
+    </div>
+    </BrowserRouter>
   );
 }
 
