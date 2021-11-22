@@ -1,27 +1,30 @@
-import { getAllReviews, getAllCategories } from '../utils/api'
-import {useState, useEffect} from 'react'
+import { getAllCategories } from '../utils/api'
+
+import { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
 
 
-const AllReviews = () => {
-    const [reviews, setReviews] = useState([])
+const AllCategories = () => {
     const [categories, setCategories] = useState([])
+    
+      
+        
     useEffect(() => {
         getAllCategories().then((allCategories) => {
           setCategories(allCategories)
         })
       }, [])  
-    
-      
+
+        
     return (
         <nav className="Nav">
-         <h1>AllReviews</h1>
+         <h2>Please Select A Review Category</h2>
          <ul>
         {categories.map(category => {
           return (
             <span key={category.slug}>
               <Link to={`/Categories/category`}>
-                <h4>{category.slug}</h4>
+                <h4 className="Category">{category.slug}</h4>
               </Link>
             </span>
             )})}
@@ -31,4 +34,6 @@ const AllReviews = () => {
       )
     }
     
-    export default AllReviews
+  
+    
+    export default AllCategories
