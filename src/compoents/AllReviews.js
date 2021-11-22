@@ -1,9 +1,5 @@
 //Need a Use Effect to render this page at the right time
-
-
-
-
-const allReviews = () => {
+const AllReviews = () => {
 
     return (
         <nav className="Nav">
@@ -12,4 +8,4 @@ const allReviews = () => {
       )
     }
     
-    export default allReviews
+    export default AllReviews
