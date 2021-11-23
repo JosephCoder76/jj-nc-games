@@ -1,14 +1,13 @@
 import { getAllReviews } from '../utils/api'
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const AllReviews = ({reviews, setReviews}) => {
     
-    console.log("First All Reviews",reviews)
-    useEffect(() => {
+      useEffect(() => {
         getAllReviews().then((allreviews) => {
           setReviews(allreviews)
         })
-      }, [])  
+      })  
         
     return (
         <nav className="Nav">

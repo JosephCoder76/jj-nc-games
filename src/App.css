@@ -3,6 +3,30 @@
   background-color: #F4E185;
   font-size: 40px;
   font-style: italic;
+  
+}
+
+
+
+
+.PageTitle {
+  width: 250px;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-family: ‘Shippori Antique’, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;    
+  position: relative;
+  text-decoration: none; 
+  margin-left: 800px;
+  width: 300px;
+  margin-top: 35px;
+  text-transform: uppercase;
+  text-align: center;
+
 }
 
 .Nav_link {
@@ -51,3 +75,51 @@
     width: 400px;
   }
 
+  .ItemsByCategory{
+
+    text-transform: uppercase;
+    background-color: #14279B;
+    color: #E6E6E6;
+    font-family: ‘Shippori Antique’, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none; 
+    text-align: center;
+    margin-left: 750px;
+    width: 450px;
+
+  }
+
+  .button::first-letter{
+    text-transform: uppercase;
+  }
+
+
+  .button {
+    width: 250px;
+    background-color: #14279B;
+    color: #E6E6E6;
+    font-family: ‘Shippori Antique’, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;    
+    position: relative;
+    text-decoration: none; 
+    margin-left: 800px;
+    margin-top: 35px;
+    box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
+   
+  }
+ 
+.Categories {
+background-image: url('./images/Categories2.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+padding-bottom: 30px;
+
+}

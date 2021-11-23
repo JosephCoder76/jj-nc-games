@@ -20,7 +20,8 @@ function App() {
 
   return (
     <BrowserRouter>
-    <h1 className="App">JJ Game Reviews
+    <h1 className="PageTitle">JJ Game Reviews</h1>
+    <section className="App">
     <Nav />
     <Routes>
     <Route path="/" element={<Home />} />
@@ -29,7 +30,8 @@ function App() {
     <Route path="/categories/:category" element={<SingleCategory reviews={reviews} categories={categories}/>} />
     <Route path="/ReviewsByCategory" element={<AllCategories reviews={reviews} setReviews={setReviews} categories={categories} setCategories={setCategories}/>} />
     </Routes>
-    </h1><br></br>
+    </section>
+    <br></br>
     <br></br>
     </BrowserRouter>
   );

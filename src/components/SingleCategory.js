@@ -5,20 +5,23 @@ import { useParams } from "react-router-dom";
 const SingleCategory = ({reviews}) => {
   
   const { category } = useParams();
-  console.log("Reviews in Single Reviews",reviews);
-  const mystery = reviews.filter(review => review.category === category)
-  console.log("Filter",mystery) //Trying to decipher why the filter was not working so trying to log out and 
-  //Need to go through this.
-
 
   return (
-    <main className="ItemsByCat">
-      <h1>Items by category</h1>
+    <main className="SingleCategory"><br></br>
+      <h1 className="ItemsByCategory">{category} Reviews</h1>
       <ul>
          {reviews.filter(review => review.category === category).map(review => {
             return (
               <div key={review.title}>
                 <p>{review.title}</p> 
+              <p className="ReviewTitle">{reviews.title}</p>
+              <img className = "ReviewImages" src={review.review_img_url} alt={reviews.title}/>
+              <p className="AllReviews">Category: {review.category}</p>
+              <p className="AllReviews">Author: {review.owner}</p>
+              <p className="AllReviews">Review Date: {review.created_at}</p>
+              <p className="AllReviews">Game Designer: {review.designer}</p>
+              <p className="AllReviews">Current Votes: {review.votes}</p>
+              <p className="AllReviews">{review.review_body}</p><br></br><br></br>
                 
               </div>
             )
