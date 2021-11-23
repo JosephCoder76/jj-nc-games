@@ -4,13 +4,15 @@ const marketApi = axios.create({
   baseURL: `https://jj-nc-games.herokuapp.com/api`
 })
 
-
-
 export const getAllReviews = () => {
+
    return marketApi.get(`/reviews`).then(res => res.data.reviews)}
 
-   export const getAllCategories = () => {
-    return marketApi.get(`/categories`).then(res => res.data.categories)}
+export const getAllCategories = () => {
+  return marketApi.get(`/categories`).then(res => res.data.categories)}
+
+export const getCategoryByName = (name) => {
+  return marketApi.get(`/categories/${name}`).then(res => res.data.categories)}
 
 
 

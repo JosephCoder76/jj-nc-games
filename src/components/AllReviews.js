@@ -1,8 +1,8 @@
 import { getAllReviews } from '../utils/api'
 import { useState, useEffect } from "react";
 
-const AllReviews = () => {
-    const [reviews, setReviews] = useState([])
+const AllReviews = ({reviews, setReviews}) => {
+    
     
     useEffect(() => {
         getAllReviews().then((allreviews) => {

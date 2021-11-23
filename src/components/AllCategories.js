@@ -1,3 +1,4 @@
+
 import { getAllCategories } from '../utils/api'
 import { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
@@ -8,19 +9,24 @@ const AllCategories = () => {
     useEffect(() => {
         getAllCategories().then((allCategories) => {
           setCategories(allCategories)
+          
         })
       }, [])  
               
-    return (
+          return (
         <nav className="Nav">
+          
          <h2>Please Select A Review Category</h2>
          <ul>
         {categories.map(category => {
           return (
             <span key={category.slug}>
-              <Link to={`/Categories/category`}>
-                <h4 className="Category">{category.slug}</h4>
+              <Link to={`/categories/${category.slug}`}>
+                <h4>{category.slug}</h4>
               </Link>
+              {/* <Link to={`/Categories/category`}>
+                <h4 className="Category">{category.slug}</h4>
+              </Link> */}
             </span>
             )})}
       </ul>
