@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: #F4E185;
+  font-size: 40px;
+  font-style: italic;
 }
 
 .Nav_link {
@@ -18,5 +21,19 @@
   .Category {
 
     text-transform: uppercase;
+
+  }
+
+  .ReviewTitle{
+
+    font-size: 40px;
+    font-style: italic;
+    
+  }
+
+
+  .AllReviews {
+
+    font-size: 20px;
 
   }

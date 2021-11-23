@@ -1,7 +1,8 @@
 import './App.css';
-import Home from "./compoents/Home";
-import Nav from "./compoents/Nav";
-import AllReviews from "./compoents/AllReviews"
+import Home from "./components/Home";
+import Nav from "./components/Nav";
+import AllCategories from "./components/AllCategories"
+import AllReviews from "./components/AllReviews"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/AllReviews" element={<AllReviews />} />
-  
+    <Route path="/AllCategories" element={<AllCategories />} />
+    
     </Routes>
     </h1><br></br>
     <br></br>

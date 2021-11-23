@@ -1,21 +1,16 @@
 import { getAllCategories } from '../utils/api'
-
 import { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
 
-
 const AllCategories = () => {
     const [categories, setCategories] = useState([])
-    
-      
-        
+            
     useEffect(() => {
         getAllCategories().then((allCategories) => {
           setCategories(allCategories)
         })
       }, [])  
-
-        
+              
     return (
         <nav className="Nav">
          <h2>Please Select A Review Category</h2>
@@ -29,11 +24,8 @@ const AllCategories = () => {
             </span>
             )})}
       </ul>
-
-          </nav>
+       </nav>
       )
     }
-    
-  
     
     export default AllCategories

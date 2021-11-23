@@ -6,9 +6,8 @@ const Nav = () => {
         <nav className="Nav"> <br></br>
       <Link to='/' className='Nav_link'>Home </Link>
       <Link to='/allreviews' className='Nav_link'>AllReviews</Link>
-         
-          </nav>
+      <Link to='/allcategories' className='Nav_link'>AllCategories</Link>
+      </nav>
       )
     }
-    
     export default Nav

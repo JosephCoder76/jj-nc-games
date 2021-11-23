@@ -7,7 +7,7 @@ const marketApi = axios.create({
 
 
 export const getAllReviews = () => {
-   return marketApi.get(`/reviews`).then(res => res.data.items)}
+   return marketApi.get(`/reviews`).then(res => res.data.reviews)}
 
    export const getAllCategories = () => {
     return marketApi.get(`/categories`).then(res => res.data.categories)}
