@@ -26,7 +26,7 @@ function App() {
     <Route path="/" element={<Home />} />
     <Route path="/AllReviews" element={<AllReviews reviews={reviews} setReviews={setReviews} />} />
     <Route path="/AllCategories" element={<AllCategories />} />
-    <Route path="/categories/:slug" element={<SingleCategory reviews={reviews}/>} />
+    <Route path="/categories/:category" element={<SingleCategory reviews={reviews} categories={categories}/>} />
     <Route path="/ReviewsByCategory" element={<AllCategories reviews={reviews} setReviews={setReviews} categories={categories} setCategories={setCategories}/>} />
     </Routes>
     </h1><br></br>

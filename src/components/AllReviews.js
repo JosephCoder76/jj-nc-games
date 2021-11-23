@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const AllReviews = ({reviews, setReviews}) => {
     
-    
+    console.log("First All Reviews",reviews)
     useEffect(() => {
         getAllReviews().then((allreviews) => {
           setReviews(allreviews)
