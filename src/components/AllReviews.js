@@ -17,7 +17,7 @@ const AllReviews = () => {
           return (
             <div key={reviews.title}>
               <p className="ReviewTitle">{reviews.title}</p>
-              <img src={reviews.review_img_url} alt={reviews.title}/>
+              <img className = "ReviewImages" src={reviews.review_img_url} alt={reviews.title}/>
               <p className="AllReviews">Category: {reviews.category}</p>
               <p className="AllReviews">Author: {reviews.owner}</p>
               <p className="AllReviews">Review Date: {reviews.created_at}</p>
