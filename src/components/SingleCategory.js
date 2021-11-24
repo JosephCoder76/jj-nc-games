@@ -1,9 +1,6 @@
 import { useParams } from "react-router-dom";
 
-
-
 const SingleCategory = ({reviews}) => {
-  
   const { category } = useParams();
 
   return (

@@ -18,6 +18,14 @@ export const getAllCategories = () => {
 export const getCategoryByName = (name) => {
   return marketApi.get(`/categories/${name}`).then(res => res.data.categories)}
 
+  export const getReviewComment = (review_id) => {
+    console.log(review_id)
+    console.log(typeof(review_id))
+    return marketApi.get(`reviews/${review_id}/comments`).then(res => {
+      console.log("Comments",res.data)
+      return res.data.comments
+    });
+  }
 
 
 

@@ -34,7 +34,7 @@ function App() {
     <Route path="/AllCategories" element={<AllCategories />} />
     <Route path="/categories/:category" element={<SingleCategory reviews={reviews} categories={categories}/>} />
     <Route path="/ReviewsByCategory" element={<AllCategories reviews={reviews} setReviews={setReviews} categories={categories} setCategories={setCategories}/>} />
-    <Route path="/reviews/:review_id/comments" element={<AllReviews reviews={reviews}/>} />
+   
     {/* <Route path="/reviews/:comment/comments" element={<Comments comments={comments} reviews={reviews}/>} /> */}
     </Routes>
     </section>
