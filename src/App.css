@@ -6,9 +6,6 @@
   
 }
 
-
-
-
 .PageTitle {
   width: 250px;
   background-color: #14279B;
@@ -40,6 +37,7 @@
   margin: 10px;
   text-decoration: none; 
   text-align: center;
+  
   }
 
   .Nav_link:hover{
@@ -61,10 +59,19 @@
     
   }
 
-
   .AllReviews {
 
     font-size: 20px;
+    max-width: 800px;
+    margin-left: 550px;
+
+  }
+
+  .ReviewBody {
+    font-size: 20px;
+    max-width: 800px;
+    margin-left: 550px;
+    text-align: left;
 
   }
 
@@ -81,8 +88,6 @@
     padding: 5px;
     width: 400px;
   }
-
-
 
   .ItemsByCategory{
 
@@ -124,6 +129,45 @@
     box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
    
   }
+
+  .SelectAReviewButton {
+    width: 250px;
+    background-color: #14279B;
+    color: #E6E6E6;
+    font-family: ‘Shippori Antique’, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;    
+    position: relative;
+    text-decoration: none; 
+    margin-left: 820px;
+    margin-top: 35px;
+    box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
+   
+  }
+
+.SingleReviewButton{
+
+    width: 700px;
+    background-color: #5361b8;
+    color: #E6E6E6;
+    font-family: ‘Shippori Antique’, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;    
+    position: relative;
+    text-decoration: none; 
+    margin-left: 580px;
+    margin-top: 30px;
+    box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
+    text-transform: uppercase;
+
+}
+
  
 .Categories {
 background-image: url('./images/Categories2.jpg');
@@ -131,4 +175,10 @@ background-size: cover;
 background-repeat: no-repeat;
 padding-bottom: 30px;
 
+}
+
+.madeWithReact {
+
+  max-width: 200px;
+  margin-right: 1600px;
 }

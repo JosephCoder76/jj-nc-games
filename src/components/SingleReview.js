@@ -17,18 +17,18 @@ const SingleReview = () => {
           setComment(comment)
         })
       },[])   
-      console.log("review_id", comment)
+      
 
    return (
     <main className="SingleReview"><br></br>
-            <p className="ReviewTitle">{review.title}</p>
+            <p className="SingleReviewButton">{review.title}</p><br></br>
             <img className = "SingleReviewImage" src={review.review_img_url} alt={review.title}/>
             <p className="AllReviews">Category: {review.category}</p>
             <p className="AllReviews">Author: {review.owner}</p>
             <p className="AllReviews">Review Date: {review.created_at}</p>
             <p className="AllReviews">Game Designer: {review.designer}</p>
             <p className="AllReviews">Current Votes: {review.votes}</p>
-            <p className="AllReviews">{review.review_body}</p>
+            <p className="ReviewBody">{review.review_body}</p>
             <p>Comments</p>
             {comment.map((comment) => {
               return(

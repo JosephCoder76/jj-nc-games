@@ -4,7 +4,7 @@ const SingleCategory = ({reviews}) => {
   const { category } = useParams();
 
   return (
-    <main className="SingleCategory"><br></br>
+    <main><br></br>
       <h1 className="ItemsByCategory">{category} Reviews</h1>
       <ul>
          {reviews.filter(review => review.category === category).map(review => {
@@ -18,7 +18,7 @@ const SingleCategory = ({reviews}) => {
               <p className="AllReviews">Review Date: {review.created_at}</p>
               <p className="AllReviews">Game Designer: {review.designer}</p>
               <p className="AllReviews">Current Votes: {review.votes}</p>
-              <p className="AllReviews">{review.review_body}</p><br></br><br></br>
+              <p className="ReviewBody">{review.review_body}</p><br></br><br></br>
                 
               </div>
             )
