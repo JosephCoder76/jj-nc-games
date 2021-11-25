@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getSingleReview, getReviewComment } from '../utils/api'
+import { getSingleReview, getReviewComment, patchLikes } from '../utils/api'
 import { useParams } from "react-router-dom";
 
 const SingleReview = () => {
@@ -8,6 +8,7 @@ const SingleReview = () => {
 
     const [review, setReviews] = useState([]);
     const [comment, setComment] = useState([]);
+    const [likes, setObject] = useState({});
 
     useEffect(() => {
         getSingleReview(Number(review_id)).then((review) => {
@@ -15,6 +16,9 @@ const SingleReview = () => {
         })
         getReviewComment(Number(review_id)).then((comment) => {
           setComment(comment)
+        })
+        patchLikes(Number(review_id, likes)).then((like) => {
+          setObject(like)
         })
       },[])   
       
@@ -32,10 +36,18 @@ const SingleReview = () => {
             <p>Comments</p>
             {comment.map((comment) => {
               return(
-             <p className="AllReviews">{comment.body}</p>
+             
+             <p key={comment.title} className="AllReviews">{comment.body}</p>
               )
             })}
-    </main>
+            
+            <button className="button" onClick={() =>{
+              setObject({inc_votes:1})
+              
+              patchLikes(review_id, likes)
+          
+            }}>Like Review </button>
+            </main>
 )
 }
 

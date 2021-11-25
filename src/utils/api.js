@@ -5,27 +5,23 @@ const marketApi = axios.create({
 })
 
 export const getAllReviews = () => {
-
    return marketApi.get(`/reviews`).then(res => res.data.reviews)}
 
-   export const getSingleReview = (review_id) => {
-
-    return marketApi.get(`/reviews/${review_id}`).then(res => res.data.review)}
+export const getSingleReview = (review_id) => {
+   return marketApi.get(`/reviews/${review_id}`).then(res => res.data.review)}
  
 export const getAllCategories = () => {
-  return marketApi.get(`/categories`).then(res => res.data.categories)}
+   return marketApi.get(`/categories`).then(res => res.data.categories)}
 
 export const getCategoryByName = (name) => {
-  return marketApi.get(`/categories/${name}`).then(res => res.data.categories)}
+   return marketApi.get(`/categories/${name}`).then(res => res.data.categories)}
 
   export const getReviewComment = (review_id) => {
-    console.log(review_id)
-    console.log(typeof(review_id))
-    return marketApi.get(`reviews/${review_id}/comments`).then(res => {
-      console.log("Comments",res.data)
-      return res.data.comments
-    });
-  }
+      return marketApi.get(`reviews/${review_id}/comments`).then(res => res.data.comments)};
+
+    export const patchLikes = (review_id, likes) => {
+      return marketApi.patch(`reviews/${review_id}`, likes).then(res => console.log(res.data.review))}
+  
 
 
 
