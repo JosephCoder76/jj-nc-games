@@ -15,6 +15,7 @@ function App() {
   const [reviews, setReviews] = useState([])
   const [categories, setCategories] = useState([])
   
+    
 
   useEffect(() => {
     getAllReviews().then((allreviews) => {
@@ -22,6 +23,7 @@ function App() {
     })
   }, [])  
 
+  
   return (
     <BrowserRouter>
     <h1 className="PageTitle">JJ Game Reviews</h1>

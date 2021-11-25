@@ -1,14 +1,29 @@
 import { useEffect, useState } from "react";
-import { getSingleReview, getReviewComment, patchLikes } from '../utils/api'
+import { getSingleReview, getReviewComment, patchLikes, postComment } from '../utils/api'
 import { useParams } from "react-router-dom";
 
 const SingleReview = () => {
 
     const { review_id } = useParams();
-
     const [review, setReviews] = useState([]);
     const [comment, setComment] = useState([]);
     const [votes, setVotes] = useState(0);
+
+    const commentObj = {username:"jessjelly"};
+    const [newComment, setNewComment] = useState({});
+    
+    
+    const addComment = (event) =>{
+      commentObj.body = newComment;
+      event.preventDefault();
+      
+      postComment(review_id, commentObj).then(()=>{
+        window.location.reload(true); 
+      })
+            
+         
+    }
+    
 
     const increaseVote = () =>{
     
@@ -16,7 +31,6 @@ const SingleReview = () => {
       setVotes((prev) => prev + 1)
     
     }
-
     const decreaseVote = () =>{
     
     patchLikes(review_id, {inc_votes:1})
@@ -54,8 +68,14 @@ const SingleReview = () => {
             <h2 className="SingleReviewButton">Vote For Your Review</h2>
             <button className="VoteButton" onClick={increaseVote}>⬆️ </button>
             <button className="VoteButton" onClick={decreaseVote}>⬇️ </button>
+            <form onSubmit={addComment}>
+            <legend className = "SingleReviewButton"><b>Add A Comment</b></legend>
+            <input type='text' name='newComment' onChange={(event) => setNewComment(event.target.value)}/>
+            <button type='submit'>Add Comment</button>
+            </form>
             </main>
 )
+console.log("New Comment", newComment)
 }
 
 

@@ -16,11 +16,15 @@ export const getAllCategories = () => {
 export const getCategoryByName = (name) => {
    return marketApi.get(`/categories/${name}`).then(res => res.data.categories)}
 
-  export const getReviewComment = (review_id) => {
+export const getReviewComment = (review_id) => {
       return marketApi.get(`reviews/${review_id}/comments`).then(res => res.data.comments)};
 
-    export const patchLikes = (review_id, votes) => {
+export const patchLikes = (review_id, votes) => {
       return marketApi.patch(`reviews/${review_id}`, votes).then(res => (res.data.review))}
+
+export const postComment = (review_id, comment) => {
+   console.log(comment);
+      return marketApi.post(`/reviews/${review_id}/comments`, comment).then(res => (res.data.comment))}
   
 
 
