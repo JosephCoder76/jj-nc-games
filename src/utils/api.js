@@ -19,8 +19,8 @@ export const getCategoryByName = (name) => {
   export const getReviewComment = (review_id) => {
       return marketApi.get(`reviews/${review_id}/comments`).then(res => res.data.comments)};
 
-    export const patchLikes = (review_id, likes) => {
-      return marketApi.patch(`reviews/${review_id}`, likes).then(res => console.log(res.data.review))}
+    export const patchLikes = (review_id, votes) => {
+      return marketApi.patch(`reviews/${review_id}`, votes).then(res => (res.data.review))}
   
 
 
