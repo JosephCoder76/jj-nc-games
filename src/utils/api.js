@@ -23,8 +23,10 @@ export const patchLikes = (review_id, votes) => {
       return marketApi.patch(`reviews/${review_id}`, votes).then(res => (res.data.review))}
 
 export const postComment = (review_id, comment) => {
-   console.log(comment);
       return marketApi.post(`/reviews/${review_id}/comments`, comment).then(res => (res.data.comment))}
+
+export const deleteComment = (id) => {
+   return marketApi.delete(`comments/${id}`).then(res => console.log("Delete Succesful"))}
   
 
 

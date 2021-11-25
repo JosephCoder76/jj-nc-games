@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getSingleReview, getReviewComment, patchLikes, postComment } from '../utils/api'
+import { getSingleReview, getReviewComment, patchLikes, postComment, deleteComment } from '../utils/api'
 import { useParams } from "react-router-dom";
 
 const SingleReview = () => {
@@ -8,20 +8,24 @@ const SingleReview = () => {
     const [review, setReviews] = useState([]);
     const [comment, setComment] = useState([]);
     const [votes, setVotes] = useState(0);
-
+    const [delCommId, setdelCommId] = useState(0);
     const commentObj = {username:"jessjelly"};
     const [newComment, setNewComment] = useState({});
-    
     
     const addComment = (event) =>{
       commentObj.body = newComment;
       event.preventDefault();
-      
       postComment(review_id, commentObj).then(()=>{
+      window.location.reload(true); 
+      })
+    }
+
+    const deleteComment = () =>{
+      
+      console.log("delCommId", delCommId)
+      deleteComment(delCommId).then(()=>{
         window.location.reload(true); 
       })
-            
-         
     }
     
 
@@ -58,24 +62,24 @@ const SingleReview = () => {
             <p className="AllReviews">Game Designer: {review.designer}</p>
             <p className="AllReviews">Current Votes: {review.votes + votes}</p>
             <p className="ReviewBody">{review.review_body}</p>
-            <p>Comments</p>
+            <p className="SingleReviewButton">Comments</p>
             {comment.map((comment) => {
               return(
-             
-             <p key={comment.title} className="AllReviews">{comment.body}</p>
+             //Up to here need to add a button to delete the comment
+             <p key={comment.title} className="AllComments">{comment.comment_id} {comment.body}</p>
               )
             })}
+            
             <h2 className="SingleReviewButton">Vote For Your Review</h2>
             <button className="VoteButton" onClick={increaseVote}>⬆️ </button>
             <button className="VoteButton" onClick={decreaseVote}>⬇️ </button>
             <form onSubmit={addComment}>
             <legend className = "SingleReviewButton"><b>Add A Comment</b></legend>
             <input type='text' name='newComment' onChange={(event) => setNewComment(event.target.value)}/>
-            <button type='submit'>Add Comment</button>
+            <button type='submit'>Submit Comment</button>
             </form>
             </main>
 )
-console.log("New Comment", newComment)
 }
 
 
