@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { getSingleReview, getReviewComment, patchLikes, postComment, deleteComment } from '../utils/api'
 import { useParams } from "react-router-dom";
 
+
 const SingleReview = () => {
 
     const { review_id } = useParams();
     const [review, setReviews] = useState([]);
     const [comment, setComment] = useState([]);
     const [votes, setVotes] = useState(0);
-    const [delCommId, setdelCommId] = useState(0);
+    const [delCommId, setdelCommId] = useState();
     const commentObj = {username:"jessjelly"};
     const [newComment, setNewComment] = useState({});
     
@@ -20,13 +21,14 @@ const SingleReview = () => {
       })
     }
 
-    const deleteComment = () =>{
-      
-      console.log("delCommId", delCommId)
-      deleteComment(delCommId).then(()=>{
+    const deleteCommentHandler = (comment_id) =>{
+           
+      deleteComment(comment_id).then(()=>{
+        console.log(comment_id)
         window.location.reload(true); 
       })
     }
+    
     
 
     const increaseVote = () =>{
@@ -65,9 +67,19 @@ const SingleReview = () => {
             <p className="SingleReviewButton">Comments</p>
             {comment.map((comment) => {
               return(
-             //Up to here need to add a button to delete the comment
+            
+             <>
              <p key={comment.title} className="AllComments">{comment.comment_id} {comment.body}</p>
-              )
+             <button onClick={() => {
+               
+              setdelCommId(comment.comment_id)
+              deleteCommentHandler(delCommId);
+             
+             }}
+              >X</button>
+              
+              </>
+             )
             })}
             
             <h2 className="SingleReviewButton">Vote For Your Review</h2>
