@@ -22,27 +22,27 @@ const SingleReview = () => {
     }
 
     const deleteCommentHandler = (comment_id) =>{
-           
-      deleteComment(comment_id).then(()=>{
-        console.log(comment_id)
-        window.location.reload(true); 
+      
+      const newComments = comment.filter((comment) =>{
+             return comment.comment_id !== comment_id
+      })
+      //setComment(newComments)
+      deleteComment(newComments[0].comment_id).then(()=>{
+         window.location.reload(true); 
       })
     }
-    
-    
-
+  
     const increaseVote = () =>{
     
       patchLikes(review_id, {inc_votes:1})
-      setVotes((prev) => prev + 1)
-    
+      setVotes((prev) => prev + 1)  
     }
+    
     const decreaseVote = () =>{
     
     patchLikes(review_id, {inc_votes:1})
     setVotes((prev) => prev - 1)
-  
-   }
+    }
 
     useEffect(() => {
         getSingleReview(Number(review_id)).then((review) => {
@@ -55,7 +55,7 @@ const SingleReview = () => {
       
 
    return (
-    <main className="SingleReview"><br></br>
+    <main className="SingleReview"className="AllReviewsBackgroundImage"><br></br>
             <p className="SingleReviewButton">{review.title}</p><br></br>
             <img className = "SingleReviewImage" src={review.review_img_url} alt={review.title}/>
             <p className="AllReviews">Category: {review.category}</p>
@@ -70,14 +70,12 @@ const SingleReview = () => {
             
              <>
              <p key={comment.title} className="AllComments">{comment.comment_id} {comment.body}</p>
-             <button onClick={() => {
-               
-              setdelCommId(comment.comment_id)
-              deleteCommentHandler(delCommId);
+             <button onClick={(event) => {
              
-             }}
-              >X</button>
-              
+              //setdelCommId(comment.comment_id)
+              deleteCommentHandler(event.target.value);
+              }}
+              >Delete Comment</button>
               </>
              )
             })}

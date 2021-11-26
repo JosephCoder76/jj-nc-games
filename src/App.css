@@ -67,6 +67,14 @@
 
   }
 
+  .SingCatReview{
+    margin-left:10px;
+    font-size: 20px;
+    max-width: 800px;
+    margin-left: 550px;
+
+  }
+
   .ReviewBody {
     font-size: 20px;
     max-width: 800px;
@@ -76,6 +84,7 @@
   }
 
   .ReviewImages{
+    margin-left:90px;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
@@ -83,6 +92,7 @@
   }
 
   .SingleReviewImage{
+    margin-left:80px;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
@@ -102,8 +112,17 @@
     margin: 10px;
     text-decoration: none; 
     text-align: center;
-    margin-left: 750px;
+    margin-left: 700px;
     width: 450px;
+
+  }
+
+  .SingCatReviewImage{
+    margin-left:40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 400px;
 
   }
 
@@ -176,9 +195,16 @@ background-repeat: no-repeat;
 padding-bottom: 30px;
 
 }
+.AllReviewsBackgroundImage {
+  background-image: url('./images/allreviews.jpg');
+  background-size: contain;
+ 
+  
+  }
 
 .madeWithReact {
-
+  
+  
   max-width: 200px;
   margin-right: 1600px;
 }
@@ -194,4 +220,17 @@ padding-bottom: 30px;
   margin-left:620px;
   text-align: left;
   font-size: 20px;
+}
+
+
+.footer {
+  position: fixed;
+
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #14279B;
+  color: white;
+  text-align: center;
+  font-size: 40px;
 }

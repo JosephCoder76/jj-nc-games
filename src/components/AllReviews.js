@@ -14,7 +14,7 @@ const AllReviews = ({reviews, setReviews}) => {
     return (
         <main className="AllReviewsBackgroundImage">
         <nav className="Nav">
-          <h1 className="SelectAReviewButton">Select A Review</h1><br></br>
+          <h1 className="SelectAReviewButton">Select A Review</h1>
          <ul>
          {reviews.map((reviews) => {
           return (
@@ -26,6 +26,7 @@ const AllReviews = ({reviews, setReviews}) => {
         })}
      </ul>
     </nav>
+   
     </main>
       )
 }

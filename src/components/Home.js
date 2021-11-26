@@ -6,11 +6,13 @@ const Home = () => {
     <div className="Home">
       <br></br>
       <br></br>
-      <img src={HomeGif} alt='Store'></img><br></br><br></br><br></br>
+      <img src={HomeGif} alt='Store'></img><br></br>
       <img className="madeWithReact"src={MadeWithReact} alt='Store'></img>
-
-
-    </div>
+      <div class="footer">
+      <p>JJ Game Reviews Powered By REACT JS</p>
+      </div>
+      </div>
+    
   )
 }
 

@@ -26,6 +26,7 @@ export const postComment = (review_id, comment) => {
       return marketApi.post(`/reviews/${review_id}/comments`, comment).then(res => (res.data.comment))}
 
 export const deleteComment = (comment_id) => {
+   console.log("Event", comment_id)
    return marketApi.delete(`comments/${comment_id}`)}
   
 
