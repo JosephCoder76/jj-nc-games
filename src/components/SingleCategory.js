@@ -4,7 +4,7 @@ const SingleCategory = ({reviews}) => {
   const { category } = useParams();
 
   return (
-    <main><br></br>
+    <main className="AllReviewsBackgroundImage"><br></br>
       <h1 className="ItemsByCategory">{category} Reviews</h1>
       <ul>
          {reviews.filter(review => review.category === category).map(review => {

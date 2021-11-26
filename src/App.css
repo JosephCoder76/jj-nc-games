@@ -149,6 +149,23 @@
    
   }
 
+  .DeleteComment{
+    width: 80px;
+    background-color: #14279B;
+    color: #E6E6E6;
+    font-family: ‘Shippori Antique’, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;    
+    position: relative;
+    text-decoration: none; 
+    
+    margin-top: 35px;
+    box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
+  }
+
   .SelectAReviewButton {
     width: 250px;
     background-color: #14279B;
@@ -217,7 +234,7 @@ padding-bottom: 30px;
 
 .AllComments{
   
-  margin-left:620px;
+  margin-left:800px;
   text-align: left;
   font-size: 20px;
 }
@@ -233,4 +250,39 @@ padding-bottom: 30px;
   color: white;
   text-align: center;
   font-size: 40px;
+}
+
+.DeleteComment{
+  width: 200px;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-family: ‘Shippori Antique’, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;    
+  position: relative;
+  text-decoration: none; 
+  
+  margin-top: 35px;
+  box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
+}
+
+.SubmitButton {
+  width: 150px;
+  background-color: #14279B;
+  color: #E6E6E6;
+  font-family: ‘Shippori Antique’, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;    
+  position: relative;
+  text-decoration: none; 
+  margin-left: 10px;
+  margin-top: 35px;
+  box-shadow: 0 0 12px 8px rgba(0, 140, 186, 0.5);
+ 
 }

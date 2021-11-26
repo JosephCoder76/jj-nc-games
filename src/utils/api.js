@@ -9,6 +9,9 @@ export const getAllReviews = () => {
 
 export const getSingleReview = (review_id) => {
    return marketApi.get(`/reviews/${review_id}`).then(res => res.data.review)}
+
+   export const getReviewQuery = (query) => {
+      return marketApi.get(`/reviews/${query}`).then(res => res.data.review)}
  
 export const getAllCategories = () => {
    return marketApi.get(`/categories`).then(res => res.data.categories)}
@@ -26,7 +29,6 @@ export const postComment = (review_id, comment) => {
       return marketApi.post(`/reviews/${review_id}/comments`, comment).then(res => (res.data.comment))}
 
 export const deleteComment = (comment_id) => {
-   console.log("Event", comment_id)
    return marketApi.delete(`comments/${comment_id}`)}
   
 

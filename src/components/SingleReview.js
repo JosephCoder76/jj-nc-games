@@ -9,7 +9,6 @@ const SingleReview = () => {
     const [review, setReviews] = useState([]);
     const [comment, setComment] = useState([]);
     const [votes, setVotes] = useState(0);
-    const [delCommId, setdelCommId] = useState();
     const commentObj = {username:"jessjelly"};
     const [newComment, setNewComment] = useState({});
     
@@ -22,16 +21,15 @@ const SingleReview = () => {
     }
 
     const deleteCommentHandler = (comment_id) =>{
-      
-      const newComments = comment.filter((comment) =>{
-             return comment.comment_id !== comment_id
+       const newComments = comment.filter((comment) =>{
+       return comment.comment_id !== comment_id
       })
-      //setComment(newComments)
-      deleteComment(newComments[0].comment_id).then(()=>{
+         deleteComment(newComments[0].comment_id).then(()=>{
          window.location.reload(true); 
       })
     }
-  
+
+   
     const increaseVote = () =>{
     
       patchLikes(review_id, {inc_votes:1})
@@ -69,10 +67,9 @@ const SingleReview = () => {
               return(
             
              <>
-             <p key={comment.title} className="AllComments">{comment.comment_id} {comment.body}</p>
-             <button onClick={(event) => {
-             
-              //setdelCommId(comment.comment_id)
+             <p key={comment.title} className="AllComments">***   {comment.body}   ***</p>
+             <button className="DeleteComment" onClick={(event) => {
+                           //setdelCommId(comment.comment_id)
               deleteCommentHandler(event.target.value);
               }}
               >Delete Comment</button>
@@ -86,7 +83,7 @@ const SingleReview = () => {
             <form onSubmit={addComment}>
             <legend className = "SingleReviewButton"><b>Add A Comment</b></legend>
             <input type='text' name='newComment' onChange={(event) => setNewComment(event.target.value)}/>
-            <button type='submit'>Submit Comment</button>
+            <button className="SubmitButton" type='submit'>Submit Comment</button>
             </form>
             </main>
 )

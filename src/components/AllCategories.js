@@ -12,7 +12,7 @@ const AllCategories = () => {
       }, [])  
               
     return (
-        <main className="Categories">  
+        <main className="Categories" >  
          <h2>Please Select A Review Category</h2>
          <ul>
         {categories.map(category => {
